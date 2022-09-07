@@ -1,0 +1,16 @@
+{
+	"smoking": {
+		"name": "Smoking",
+		"slug": "smoking",
+		"entry_name": "smoke",
+		"entries_name": "smokes",
+		"description": "Cigarettes",
+		"private": false,
+		"icon": "☇",
+		"color": "#528d8e",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	}
+}
