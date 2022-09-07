@@ -46,39 +46,6 @@
 			"name": "date"
 		},
 		{
-			"type": "spacer",
-			"scope": "entry",
-			"settings": {}
-		},
-		{
-			"type": "property",
-			"scope": "entry",
-			"settings": {
-				"allow_multiple": "",
-				"max": 5,
-				"prefix": "intensity: ",
-				"text_color": "#de3e2d"
-			},
-			"name": "intensity"
-		},
-		{
-			"type": "property",
-			"scope": "entry",
-			"settings": {
-				"prefix": "location: ",
-				"allow_multiple": "",
-				"type": "options",
-				"multiline": false,
-				"options": "Left, Right, Both"
-			},
-			"name": "location"
-		},
-		{
-			"type": "spacer",
-			"scope": "entry",
-			"settings": {}
-		},
-		{
 			"type": "property",
 			"scope": "entry",
 			"flags": [
@@ -174,6 +141,35 @@
 			"name": "duration_readable"
 		},
 		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {}
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"allow_multiple": "",
+				"max": 5,
+				"prefix": "intensity: ",
+				"text_color": "#de3e2d",
+				"appearance": "stretch"
+			},
+			"name": "intensity"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"prefix": "location: ",
+				"allow_multiple": "",
+				"type": "options",
+				"multiline": false,
+				"options": "Left, Right, Both"
+			},
+			"name": "location"
+		},
+		{
 			"type": "property",
 			"scope": "entry",
 			"settings": {
@@ -202,6 +198,26 @@
 			"settings": {
 				"expression": "duration($now - last(end_date_time), 'hours')"
 			}
+		},
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"target_preset": "last",
+				"target": "last(entry)",
+				"set_pairs": [
+					{
+						"name": "end_date",
+						"value": "$today"
+					},
+					{
+						"name": "end_time",
+						"value": "time($now)"
+					}
+				],
+				"filter_pairs": [],
+				"label": "End Migraine"
+			}
 		}
 	],
 	"charts": [
@@ -212,6 +228,15 @@
 				"type": "bar",
 				"aggregate": "average",
 				"aggregate_of": "intensity"
+			}
+		},
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "pie",
+				"group_by": "location",
+				"caption": "Number of migraines per side"
 			}
 		}
 	]
