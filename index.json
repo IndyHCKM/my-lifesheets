@@ -12,5 +12,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"migraine": {
+		"name": "Migraine",
+		"slug": "migraine",
+		"entry_name": "migraine",
+		"entries_name": "migraines",
+		"description": "migraine tracker",
+		"private": false,
+		"icon": "✹",
+		"color": "#0cc4e9",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
