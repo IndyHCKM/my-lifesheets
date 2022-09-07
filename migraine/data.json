@@ -1,0 +1,28 @@
+{
+	"entry": [
+		{
+			"date": "2022-07-30",
+			"intensity": "3",
+			"location": "Left",
+			"time": "11:00",
+			"end_time": "17:00",
+			"end_date": "2022-07-30"
+		},
+		{
+			"date": "2022-08-05",
+			"intensity": "3",
+			"location": "Left",
+			"time": "20:00",
+			"end_time": "02:00",
+			"end_date": "2022-08-07"
+		},
+		{
+			"date": "2022-08-13",
+			"intensity": "3",
+			"location": "Left",
+			"time": "20:00",
+			"end_time": "04:00",
+			"end_date": "2022-08-14"
+		}
+	]
+}
