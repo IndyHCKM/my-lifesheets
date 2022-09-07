@@ -204,5 +204,15 @@
 			}
 		}
 	],
-	"charts": []
+	"charts": [
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "bar",
+				"aggregate": "average",
+				"aggregate_of": "intensity"
+			}
+		}
+	]
 }
