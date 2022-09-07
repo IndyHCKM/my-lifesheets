@@ -124,6 +124,22 @@
 			"settings": {
 				"expression": "duration($now - first(date_time), 'minutes')"
 			}
+		},
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"target_preset": "new",
+				"target": "add(entry)",
+				"set_pairs": [
+					{
+						"name": "Cigarettes",
+						"value": "50"
+					}
+				],
+				"filter_pairs": [],
+				"label": "Add 50 smokes"
+			}
 		}
 	],
 	"charts": [
