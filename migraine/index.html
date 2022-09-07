@@ -51,21 +51,37 @@
 		</table>
 	</h-chart>
 	<figcaption>Average intensity per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-pie" style="min-width: min(300px, 100vw)">
+	
+	<h-chart type="pie" x="b">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Location</th>
+					<th hc-name="b">Number of migraines</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart20" mv-value="sort(groupBy(entry.entry, entry.location), '$value')">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[count($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart>
+	<figcaption>Number of migraines per side</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
 				<button data-type="action" mv-action="add(entry)">Add Migraine</button>
 				<span data-type="expression" mv-value="duration($now - last(end_date_time), 'hours')"></span>
+				<button data-type="action" mv-action="set(last(entry), group(end_date: $today, end_time: time($now)))">End Migraine</button>
 			</div>
 		<section mv-list="entry">
 			<article mv-list-item class="entry">
 				<header class="field-row">
 					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
 					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
-					<span data-type="spacer" class="appearance-stretch"></span>
-					<span property="intensity" data-type="property" data-prefix="intensity: " mv-default="3" mv-editor-type="number" mv-editor-min="1" mv-editor-max="5" mv-editor-step="1" class="type-number" style="color: #de3e2d"></span>
-					<span property="location" data-type="property" data-prefix="location: " mv-options="Left, Right, Both" class="type-options"></span>
-					<span data-type="spacer" class="appearance-stretch"></span>
 					<time property="time" data-type="property" data-prefix=" at " mv-default="[time($startup, 'hours')]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
 					<span property="date_time" data-type="expression" data-show="false" mv-value="datetime(date, time)"></span>
 					<time property="end_time" data-type="property" data-prefix=" to " data-show="[process_visible(time)]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
@@ -73,6 +89,9 @@
 					<span property="end_date_time" data-type="expression" data-show="false" mv-value="datetime(end_date, end_time)"></span>
 					<span property="duration" data-type="expression" data-show="false" mv-value="end_date_time - date_time"></span>
 					<span property="duration_readable" data-type="expression" data-prefix="(" data-suffix=")" data-show="[process_visible(end_date and (time and end_time))]" mv-value="duration(duration, 2)"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<span property="intensity" data-type="property" data-prefix="intensity: " mv-default="3" mv-editor-type="number" mv-editor-min="1" mv-editor-max="5" mv-editor-step="1" class="appearance-stretch type-number" style="color: #de3e2d"></span>
+					<span property="location" data-type="property" data-prefix="location: " mv-options="Left, Right, Both" class="type-options"></span>
 				</header>
 				<div property="notes" data-type="property" class="appearance-line type-text"></div>
 			</article>
