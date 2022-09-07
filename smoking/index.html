@@ -56,6 +56,7 @@
 			<div class="field-row">
 				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add smoke</button>
 				<span data-type="expression" mv-value="duration($now - first(date_time), 'minutes')"></span>
+				<button data-type="action" mv-action="add(Cigarettes: 50, entry)">Add 50 smokes</button>
 			</div>
 		<section mv-list="entry">
 			<article mv-list-item class="entry">
