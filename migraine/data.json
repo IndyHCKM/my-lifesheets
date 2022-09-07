@@ -10,7 +10,7 @@
 		},
 		{
 			"date": "2022-08-05",
-			"intensity": "3",
+			"intensity": 2,
 			"location": "Right",
 			"time": "20:00",
 			"end_time": "02:00",
